@@ -5,7 +5,8 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
-      userGit: []
+      avatar: "",
+      getAllReposUser: []
     };
     this.callApi = this.callApi.bind(this);
   }
@@ -13,12 +14,18 @@ class Home extends Component {
   callApi() {
     axios
       .get("https://api.github.com/users/jeffersonISlima/repos")
-      .then(response => {
-        console.log(response.data.repos_url);
-        
-        this.setState({
-          userGit: response.data.repos_url
-        });
+      .then(responseAllRepos => {
+        axios
+          .get("https://api.github.com/users/jeffersonISlima")
+          .then(respondeAvatar => {
+            this.setState({
+              avatar: respondeAvatar.data.avatar_url,
+              getAllReposUser: responseAllRepos.data
+            });
+          })
+          .catch(err => {
+            throw new Error(err);
+          });
       })
       .catch(err => {
         throw new Error(err);
@@ -32,8 +39,9 @@ class Home extends Component {
   render() {
     return (
       <>
-        {this.state.userGit.map(e => {
-          return <h2>{e.repos_url}</h2>;
+      <img src={this.state.avatar} alt=""/>
+        {this.state.getAllReposUser.map(e => {
+          return <h2 key={e.id}>{e.name}</h2>;
         })}
       </>
     );
