@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import React, { Component } from "react";
 
 class Home extends Component {
@@ -39,9 +40,17 @@ class Home extends Component {
   render() {
     return (
       <>
-      <img src={this.state.avatar} alt=""/>
-        {this.state.getAllReposUser.map(e => {
-          return <h2 key={e.id}>{e.name}</h2>;
+        <figure>
+          <img src={this.state.avatar} alt="" />
+        </figure>
+        {this.state.getAllReposUser.map(repository => {
+          return (
+            <Link to={`/commits/${repository.id}`}>
+              <div key={repository.id}>
+                <h2>{repository.name}</h2>;
+              </div>
+            </Link>
+          );
         })}
       </>
     );

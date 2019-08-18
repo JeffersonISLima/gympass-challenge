@@ -2,6 +2,8 @@ import "./App.css";
 import React from "react";
 import Home from "../Home";
 import Navbar from "../Navbar";
+import Commits from "../Commits";
+import { Switch, Route } from "react-router-dom";
 
 const App = () => {
   return (
@@ -11,7 +13,10 @@ const App = () => {
       </header>
 
       <section>
-        <Home />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/commits" component={Commits} />
+        </Switch>
       </section>
     </div>
   );
