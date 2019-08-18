@@ -14,7 +14,7 @@ const App = () => {
 
       <section>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/"  component={Home} />
           <Route path="/commits" component={Commits} />
         </Switch>
       </section>

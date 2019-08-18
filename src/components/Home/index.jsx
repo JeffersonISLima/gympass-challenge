@@ -7,20 +7,19 @@ class Home extends Component {
     super();
     this.state = {
       avatar: "",
+      userName: "",
       getAllReposUser: []
     };
-    this.callApi = this.callApi.bind(this);
+    this.callApiGetInformationsAboutProfile = this.callApiGetInformationsAboutProfile.bind(this);
   }
 
-  callApi() {
-    axios
-      .get("https://api.github.com/users/jeffersonISlima/repos")
+  callApiGetInformationsAboutProfile() {
+    axios.get("https://api.github.com/users/jeffersonISlima/repos")
       .then(responseAllRepos => {
-        axios
-          .get("https://api.github.com/users/jeffersonISlima")
-          .then(respondeAvatar => {
+        axios.get("https://api.github.com/users/jeffersonISlima")
+          .then(responseAvatar => {
             this.setState({
-              avatar: respondeAvatar.data.avatar_url,
+              avatar: responseAvatar.data.avatar_url,
               getAllReposUser: responseAllRepos.data
             });
           })
@@ -34,24 +33,31 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.callApi();
+    this.callApiGetInformationsAboutProfile();
   }
 
   render() {
     return (
       <>
         <figure>
-          <img src={this.state.avatar} alt="" />
+          <img src={this.state.avatar} alt="Foto do Perfil" />
         </figure>
-        {this.state.getAllReposUser.map(repository => {
+        <h2>{this.state.userName}</h2>
+
+        {
+          this.state.getAllReposUser.map(repository => {
           return (
-            <Link to={`/commits/${repository.id}`}>
-              <div key={repository.id}>
-                <h2>{repository.name}</h2>;
-              </div>
-            </Link>
-          );
-        })}
+              <Link
+                key={repository.id}
+                to={`/commits/${repository.name}?=${repository.created_at}`}
+              >
+                <div>
+                  <h2>{repository.name}</h2>
+                </div>
+              </Link>
+            );
+          })
+        }
       </>
     );
   }
