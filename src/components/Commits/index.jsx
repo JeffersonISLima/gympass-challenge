@@ -8,7 +8,6 @@ class Commits extends Component {
     super(props);
     this.state = {
       commits: [],
-      //commitsFiltered: [],
       controlView: false,
     };
     this.callApiGetCommits = this.callApiGetCommits.bind(this);

@@ -1,0 +1,98 @@
+.main-container {
+  width: 80%;
+  margin: auto;
+  padding: 30px;
+  margin-top: 30px;
+  box-shadow: 1px 1px 5px 1px var(--color-txt-gympass);
+}
+
+.avatar-container {
+  width: 40%;
+  font-size: 1.2em;
+}
+
+.avatar-container img {
+  border-radius: 30%;
+  box-shadow: 1px 2px 7px 1px var(--purple);
+}
+
+.nameUser-gitHub-image {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nameUser-gitHub-image:hover {
+  transition: 1s;
+  transform: scale(1.1);
+  color: var(--color-txt-gympass);
+}
+
+.nameUser-gitHub-image span {
+  width: 45px;
+}
+
+.container-avatar__following-followers {
+  display: flex;
+}
+
+.section-following-followers {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section-following-followers span {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.section-number-of-repositories {
+  width: 80%;
+  text-align: center;
+}
+
+.section-number-of-repositories div {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  font-size: 3em;
+  align-items: center;
+  padding-bottom: 30%;
+  justify-content: space-evenly;
+}
+
+.title-repos {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.name-resoritories-container {
+  width: 28%;
+  float: left;
+  display: flex;
+  height: 130px;
+  margin-top: 60px;
+  font-size: 0.8em;
+  margin-left: 30px;
+  padding: 80px 40px;
+  color: var(--black);
+  align-items: center;
+  background-size: 100%;
+  background-position: center;
+  padding-top: 18% !important;
+  background-image: url("./image/folder.jpeg");
+}
+
+.name-resoritories-container:hover {
+  font-size: 0.9em;
+  transition: 0.5s;
+  border-radius: 5px;
+  transform: scale(1.05);
+  box-shadow: 2px 2px 5px 2px var(--gray);
+}

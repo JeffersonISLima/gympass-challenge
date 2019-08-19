@@ -4,6 +4,7 @@ import Home from "../Home";
 import Navbar from "../Navbar";
 import Commits from "../Commits";
 import { Switch, Route } from "react-router-dom";
+import "../../stylesheet-components/css/settings/color.css";
 
 const App = () => {
   return (
