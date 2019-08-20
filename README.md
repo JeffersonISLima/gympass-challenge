@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Teste prático - Frontend Gympass
+> Projeto em React consumindo API.
 
-## Available Scripts
+Projeto em React que visa consumir a API do GitHub e listar todos os repositórios públicos do meu perfil de usuário e os últimos vinte commits dos repositórios.
 
-In the project directory, you can run:
+## Instruções
+> Configuração para Desenvolvimento
 
-### `npm start`
+1. Clone o repositório: https://github.com/JeffersonISLima/gympass-challenge.git
+2. Faça uso do gerenciador de pacotes [npm](https://www.npmjs.com/).
+3. Dentro da pasta do projeto (cd gympass-challenge), execute npm install no terminal para baixar todas as dependências.  
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+npm install
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Uso 
 
-### `npm test`
+Para iniciar em modo de desenvolvimento, digite npm start no terminal.
+O server é executado na porta 3000, e.g: http://localhost:3000.
+ ```sh
+npm start
+``` 
+ 
+## Telas da aplicação
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tela home:
 
-### `npm run build`
+![](/public/images/home.png) 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tela destinada à pesquisa de commits:
 
-### `npm run eject`
+![](/public/images/commits.png) 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Trechos de códigos utilizando ES6 e explicações
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+>Template String:
+axios.get(`https://api.github.com/repos/JeffersonISLima/${nameRepository}/commits`)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Neste trecho é aplicado Template Strings para utilizar uma variável com o nome do repositório e realizar o método get do axios para a API que retorna todos os commits do repositório.
 
-## Learn More
+[Referência](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/template_strings)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+>Desestruturação de objeto:
+const { target: { value } } = event;
 
-### Code Splitting
+Neste trecho a variável 'value' é desconstruída do objeto 'event.target'. Utilizei para simplificar a sintaxe e quando for necessário utilizar a variável, basta chamá-la nó código como 'value' e não como 'event.target.value'. 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+[Referência](https://blog.taller.net.br/desmistificando-o-destructuring-do-javascript-es6es7/)
 
-### Analyzing the Bundle Size
+## Contato
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Jefferson I. S. Lima  – jeffersoninacio@hotmail.com
 
-### Making a Progressive Web App
+[https://github.com/JeffersonISLima](https://github.com/JeffersonISLima)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+## Tecnologias utilizadas
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. ReactJS
+2. Axios

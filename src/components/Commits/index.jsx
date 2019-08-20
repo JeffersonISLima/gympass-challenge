@@ -16,7 +16,7 @@ class Commits extends Component {
 
   callApiGetCommits() {
     const nameRepository = this.props.location.pathname.slice(9, 40);
-    axios.get(`https://api.github.com/repos/JeffersonISLima/${nameRepository}/commits`)
+    axios.get(`${process.env.REACT_APP_API_URL_REPOS}/${nameRepository}/commits`)
       .then(responseCommits => {
         this.setState({
           commits: responseCommits.data.slice(0, 20)

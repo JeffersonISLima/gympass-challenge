@@ -20,9 +20,9 @@ class Home extends Component {
   }
 
   callApiGetInformationsAboutProfile() {
-    axios.get("https://api.github.com/users/jeffersonISlima/repos")
+    axios.get(`${process.env.REACT_APP_API_URL}/repos`)
       .then(responseAllRepos => {
-        axios.get("https://api.github.com/users/jeffersonISlima")
+        axios.get(process.env.REACT_APP_API_URL)
           .then(responseAvatar => {
             this.setState({
               userName: responseAvatar.data.login,
