@@ -1,0 +1,128 @@
+.row {
+  height: 45px;
+  display: flex;
+  margin-bottom: 30px;
+  background-color: var(--background);
+}
+
+.column-btn {
+  flex: 20%;
+  display: flex;
+  font-size: 1.5em;
+  justify-content: space-around;
+}
+
+.column-btn i,
+.behavior-inline {
+  color: var(--green-gympass);
+}
+
+.behavior-inline {
+  display: inline;
+  padding-left: 5px;
+}
+
+.behavior-inline:hover {
+  padding-left: 10px;
+}
+
+.column-aux-first {
+  flex: 10%;
+}
+
+.column-middle {
+  flex: 50%;
+}
+
+.column-aux-second {
+  flex: 30%;
+}
+
+.fom-field {
+  width: 100%;
+  background-color: var(--white);
+}
+
+input[type="search"] {
+  width: 80%;
+  height: 30px;
+  border: none;
+  margin-left: 10%;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.title-txt {
+  font-size: 1.5em;
+  line-height: 40px;
+  text-align: center;
+}
+
+.flip-card {
+  width: 300px;
+  height: 550px;
+  cursor: pointer;
+  overflow: hidden;
+  margin-left: 10px;
+  border-radius: 5px;
+  perspective: 1000px;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  position: absolute;
+  backface-visibility: hidden;
+  border: 3px solid var(--purple);
+}
+
+.date-commit {
+  top: 95%;
+  left: 55%;
+  position: absolute;
+  color: var(--green);
+  margin-bottom: 200px;
+}
+
+.flip-card-front {
+  color: black;
+  background-color: var(--front-cards-commit);
+}
+
+.flip-card-back {
+  display: flex;
+  color: white;
+  font-size: 2em;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+  border: 3px solid var(--green);
+  background-color: var(--back-cards-commit);
+}
+
+.containenr-cards {
+  width: 80%;
+  float: left;
+  display: flex;
+  padding: 50px;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  justify-content: center;
+}

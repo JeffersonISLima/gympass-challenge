@@ -1,9 +1,9 @@
 import "./Home.css";
 import axios from "axios";
-import gitHub from "./image/git.png";
+import gitHub from "./images/git.png";
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
-import repository from "./image/folder.jpeg";
+import repository from "./images/folder.jpeg";
 
 class Home extends Component {
   constructor() {
@@ -91,19 +91,21 @@ class Home extends Component {
 
           <h1 className="title-repos">LISTA DE REPOSITÓRIOS PÚBLICOS</h1>
 
-          {this.state.getAllReposUser.map(repository => {
-            return (
-              <Link
-                key={repository.id}
-                to={`/commits/${repository.name}?=${repository.created_at}`}
-              >
-                <section className="name-resoritories-container">
-                  <h2>{repository.followers}</h2>
-                  <h2>{repository.name}</h2>
-                </section>
-              </Link>
-            );
-          })}
+          {
+            this.state.getAllReposUser.map(repository => {
+              return (
+                <Link
+                  key={repository.id}
+                  to={`/commits/${repository.name}?=${repository.created_at}`}
+                >
+                  <section className="name-resoritories-container">
+                    <h2>{repository.followers}</h2>
+                    <h2>{repository.name}</h2>
+                  </section>
+                </Link>
+              );
+            })
+          }
         </main>
       </>
     );

@@ -3,7 +3,7 @@
   margin: auto;
   padding: 30px;
   margin-top: 30px;
-  box-shadow: 1px 1px 5px 1px var(--color-txt-gympass);
+  box-shadow: 1px 1px 5px 1px var(--orange-gympass);
 }
 
 .avatar-container {
@@ -26,7 +26,7 @@
 .nameUser-gitHub-image:hover {
   transition: 1s;
   transform: scale(1.1);
-  color: var(--color-txt-gympass);
+  color: var(--orange-gympass);
 }
 
 .nameUser-gitHub-image span {
@@ -86,7 +86,7 @@
   background-size: 100%;
   background-position: center;
   padding-top: 18% !important;
-  background-image: url("./image/folder.jpeg");
+  background-image: url("./images/folder.jpeg");
 }
 
 .name-resoritories-container:hover {
